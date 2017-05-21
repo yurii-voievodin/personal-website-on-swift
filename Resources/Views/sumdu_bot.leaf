@@ -1,0 +1,43 @@
+#extend("base")
+
+#export("menu") {
+<div class="row">
+    <div class="u-full-width">
+        <div class="menu">
+            <ul class="pagination">
+                <li><a href="/ua">Юра Воєводін</a></li>
+                <li><a href="/posts">Всі записи</a></li>
+            </ul>
+            <div class="row"><h1>#markdown(title)</h1></div>
+            <hr/>
+        </div>
+    </div>
+</div>
+}
+
+#export("body") {
+<div class="row">#markdown(intro)</div>
+<p></p>
+<div class="row">
+    <div class="six columns">#markdown(content)
+        <div style="text-align: center;">
+            <a target="_blank" href="https://telegram.me/sumdu_bot"><img src="/images/tgm.png" width="120"></a>
+            <p><b>Розклад СумДУ</b> для Telegram</p>
+            <p>
+            <a target="_blank" href="https://telegram.me/sumdu_bot" class="button button-primary">
+                ДОДАТИ
+            </a>
+            </p>
+        </div>
+    </div>
+    <div class="six columns"><img class="u-max-full-width" src="/images/sumdu_bot_screenshot.png" alt="SumDU Bot"></div>
+</div>
+}
+
+#export("updated_at") {
+<p class="gray-text">Останнє оновлення: #(updated_at)</p>
+}
+
+#export("main_link") {
+<a href="/ua">Юра Воєводін</a>
+}

@@ -25,7 +25,8 @@ extension Config {
     /// schemas prepared before the app boots
     private func setupPreparations() throws {
         preparations += [
-            Page.self
-        ]
+            Page.self,
+            Post.self
+        ] as [Preparation.Type]
     }
 }

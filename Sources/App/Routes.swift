@@ -11,7 +11,7 @@ final class Routes: RouteCollection {
         builder.resource("/", PageController(view))
         
         // Blog
-        
+        builder.resource("posts", PostController(view))
         
         // response to requests to /info domain
         // with a description of the request

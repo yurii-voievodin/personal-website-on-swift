@@ -1,0 +1,29 @@
+#extend("base")
+
+#export("menu") {
+<div class="row">
+    <div class="u-full-width">
+        <div class="menu">
+            <ul class="pagination">
+                <li><a href="/ua">Юра Воєводін</a></li>
+            </ul>
+            <div class="row"><h1>#markdown(title)</h1></div>
+            <hr/>
+        </div>
+    </div>
+</div>
+}
+
+#export("body") {
+#loop(posts, "post") {
+<div class="row">
+    <h3><a href="/posts/#(post.path)">#(post.title)</a></h3>
+    <span class="text">#markdown(post.intro)</span>
+    <hr/>
+</div>
+}
+}
+
+#export("main_link") {
+<a href="/ua">Юра Воєводін</a>
+}

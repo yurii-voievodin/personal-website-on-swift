@@ -29,7 +29,7 @@ final class PageController: ResourceRepresentable {
             throw Abort.notFound
         }
         // Make view
-        return try view.make("index", try page.makeNode())
+        return try view.make("index", try page.makeNode(in: nil))
     }
     
     func show(_ req: Request, _ string: String) throws -> ResponseRepresentable {
@@ -39,7 +39,7 @@ final class PageController: ResourceRepresentable {
         }
         // Make view
         let template = page.template ?? "index"
-        return try view.make(template, try page.makeNode())
+        return try view.make(template, try page.makeNode(in: nil))
     }
     
     // MARK: Resource

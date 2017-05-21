@@ -2,7 +2,7 @@ import Vapor
 import FluentProvider
 import HTTP
 
-final class Page: Model {
+final class Post: Model {
     let storage = Storage()
     
     // MARK: Properties
@@ -14,6 +14,7 @@ final class Page: Model {
     var template: String?
     var keywords: String?
     var description: String?
+    var image: String?
     
     // MARK: - Initialization
     
@@ -25,11 +26,12 @@ final class Page: Model {
         self.template = template
         self.keywords = keywords
         self.description = description
+        self.image = nil
     }
     
     // MARK: Fluent Serialization
     
-    /// Initializes the Page from the
+    /// Initializes the Post from the
     /// database row
     init(row: Row) throws {
         title = try row.get("title")
@@ -39,9 +41,10 @@ final class Page: Model {
         template = try row.get("template")
         keywords = try row.get("keywords")
         description = try row.get("description")
+        image = try row.get("image")
     }
     
-    /// Serializes the Page to the database
+    /// Serializes the Post to the database
     func makeRow() throws -> Row {
         var row = Row()
         try row.set("title", title)
@@ -51,23 +54,26 @@ final class Page: Model {
         try row.set("template", template)
         try row.set("keywords", keywords)
         try row.set("description", description)
+        try row.set("image", description)
         return row
     }
 }
 
 // MARK: - Timestampable
 
-extension Page: Timestampable { }
+extension Post: Timestampable { }
 
 // MARK: - NodeRepresentable
 
-extension Page: NodeRepresentable {
+extension Post: NodeRepresentable {
     
     func makeNode(in context: Context?) throws -> Node {
         var node = Node(context)
         try node.set("title", title)
         try node.set("intro", intro)
         try node.set("content", content)
+        try node.set("path", path)
+        try node.set("template", template)
         try node.set("keywords", keywords)
         try node.set("description", description)
         try node.set("updated_at", updatedAt?.dayMonthYear)
@@ -77,7 +83,7 @@ extension Page: NodeRepresentable {
 
 // MARK: - Preparation
 
-extension Page: Preparation {
+extension Post: Preparation {
     static func prepare(_ database: Database) throws {
         try database.create(self, closure: { builder in
             builder.id()
@@ -88,6 +94,7 @@ extension Page: Preparation {
             builder.string("template", optional: true, unique: false, default: nil)
             builder.string("keywords", optional: true, unique: false, default: nil)
             builder.string("description", optional: true, unique: false, default: nil)
+            builder.string("image", optional: true, unique: false, default: nil)
         })
     }
     
