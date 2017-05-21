@@ -1,0 +1,24 @@
+#extend("base")
+
+#export("body") {
+<div class="row">
+    <div class="three columns">
+        <img class="u-max-full-width" style="border-radius: 6px;" src="/images/avatar.jpg" alt="Yura Voevodin">
+    </div>
+    
+</div>
+
+<script type="application/ld+json">
+    {"@context":"http://schema.org","@type":"Organization","name":"Yura Voevodin","url":"http://voevodin-yura.com","sameAs":["https://www.facebook.com/yura.voevodin","https://plus.google.com/u/0/+YuriVoevodin","https://twitter.com/voevodin_yura"]}
+    </script>
+}
+
+#export("main_link") {
+<a href="/">Yura Voevodin</a>
+}
+
+#export("lang") {
+<div class="u-pull-right">
+    <a href="/ua/" class="language-link">🇺🇦 UA</a>
+</div>
+}

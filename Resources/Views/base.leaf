@@ -1,12 +1,28 @@
 <!DOCTYPE html>
-<html>
-<head>
-	<title>#import("title")</title>
-	<link rel="stylesheet" href="/styles/app.css">
-</head>
-<body>
-
-#import("content")
-
-</body>
+<html lang="en">
+    <head>
+        <title>#(title)</title>
+        <meta charset="utf-8"/>
+        <meta name="description" content="#(description)"/>
+        <meta name="keywords" content="#(keywords)"/>
+        <meta name="author" content="Yura Voevodin"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1"/>
+        <link rel="stylesheet" href="/styles/style.css"/>
+    </head>
+    <body>
+        <div class="container">
+            <div class="row"><p></p></div>
+            #import("menu")
+            #import("body")
+            <footer>
+                <hr>
+                <div class="row">
+                    <div class="u-pull-left">
+                        <p>© 2017 #import("main_link"). Made with ❤️ on <a href="https://vapor.codes">Vapor</a> and <a href="http://getskeleton.com">Skeleton</a></p>
+                    </div>
+                    #import("lang")
+                </div>
+            </footer>
+        </div>
+    </body>
 </html>

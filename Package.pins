@@ -14,6 +14,12 @@
       "version": "1.0.0"
     },
     {
+      "package": "CPostgreSQL",
+      "reason": null,
+      "repositoryURL": "https://github.com/vapor-community/cpostgresql.git",
+      "version": "2.0.0"
+    },
+    {
       "package": "CTLS",
       "reason": null,
       "repositoryURL": "https://github.com/vapor/ctls.git",
@@ -29,7 +35,7 @@
       "package": "Core",
       "reason": null,
       "repositoryURL": "https://github.com/vapor/core.git",
-      "version": "2.0.0"
+      "version": "2.0.1"
     },
     {
       "package": "Crypto",
@@ -48,6 +54,18 @@
       "reason": null,
       "repositoryURL": "https://github.com/vapor/engine.git",
       "version": "2.0.0"
+    },
+    {
+      "package": "Fluent",
+      "reason": null,
+      "repositoryURL": "https://github.com/vapor/fluent.git",
+      "version": "2.0.0"
+    },
+    {
+      "package": "FluentProvider",
+      "reason": null,
+      "repositoryURL": "https://github.com/vapor/fluent-provider.git",
+      "version": "1.0.0"
     },
     {
       "package": "JSON",
@@ -80,6 +98,24 @@
       "version": "2.0.0"
     },
     {
+      "package": "PostgreSQL",
+      "reason": null,
+      "repositoryURL": "https://github.com/vapor-community/postgresql.git",
+      "version": "2.0.0"
+    },
+    {
+      "package": "PostgreSQLDriver",
+      "reason": null,
+      "repositoryURL": "https://github.com/vapor/postgresql-driver.git",
+      "version": "2.0.0"
+    },
+    {
+      "package": "PostgreSQLProvider",
+      "reason": null,
+      "repositoryURL": "https://github.com/vapor/postgresql-provider.git",
+      "version": "2.0.0"
+    },
+    {
       "package": "Random",
       "reason": null,
       "repositoryURL": "https://github.com/vapor/random.git",
@@ -89,6 +125,12 @@
       "package": "Routing",
       "reason": null,
       "repositoryURL": "https://github.com/vapor/routing.git",
+      "version": "2.0.0"
+    },
+    {
+      "package": "SQLite",
+      "reason": null,
+      "repositoryURL": "https://github.com/vapor/sqlite.git",
       "version": "2.0.0"
     },
     {
