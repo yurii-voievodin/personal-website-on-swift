@@ -10,6 +10,9 @@ final class Routes: RouteCollection {
         // Pages
         builder.resource("/", PageController(view))
         
+        // Blog
+        
+        
         // response to requests to /info domain
         // with a description of the request
         builder.get("info") { req in

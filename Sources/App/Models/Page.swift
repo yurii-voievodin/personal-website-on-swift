@@ -53,7 +53,24 @@ final class Page: Model {
         try row.set("description", description)
         return row
     }
+    
+    // MARK: Node
+    
+    func makeNode(context: Context? = nil) throws -> Node {
+        var node = Node(context)
+        try node.set("title", title)
+        try node.set("intro", intro)
+        try node.set("content", content)
+        try node.set("keywords", keywords)
+        try node.set("description", description)
+        try node.set("updated_at", updatedAt?.dayMonthYear)
+        return node
+    }
 }
+
+// MARK: - Timestampable
+
+extension Page: Timestampable { }
 
 // MARK: - Preparation
 

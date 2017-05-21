@@ -15,6 +15,7 @@
             #import("menu")
             #import("body")
             <footer>
+            #import("updated_at")
                 <hr>
                 <div class="row">
                     <div class="u-pull-left">
