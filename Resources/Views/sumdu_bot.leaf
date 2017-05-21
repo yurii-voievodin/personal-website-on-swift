@@ -19,7 +19,7 @@
 <div class="row">#markdown(intro)</div>
 <p></p>
 <div class="row">
-    <div class="six columns">#markdown(content)
+    <div class="six columns">
         <div style="text-align: center;">
             <a target="_blank" href="https://telegram.me/sumdu_bot"><img src="/images/tgm.png" width="120"></a>
             <p><b>Розклад СумДУ</b> для Telegram</p>
@@ -29,8 +29,9 @@
             </a>
             </p>
         </div>
+        #markdown(content)
     </div>
-    <div class="six columns"><img class="u-max-full-width" src="/images/sumdu_bot_screenshot.png" alt="SumDU Bot"></div>
+    <div class="six columns"><img class="u-max-full-width" src="/images/new_sumdu_bot_screenshot.png" alt="SumDU Bot"></div>
 </div>
 }
 
