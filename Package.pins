@@ -14,6 +14,12 @@
       "version": "1.0.0"
     },
     {
+      "package": "CPostgreSQL",
+      "reason": null,
+      "repositoryURL": "https://github.com/vapor-community/cpostgresql.git",
+      "version": "2.0.0"
+    },
+    {
       "package": "CTLS",
       "reason": null,
       "repositoryURL": "https://github.com/vapor/ctls.git",
@@ -29,7 +35,7 @@
       "package": "Core",
       "reason": null,
       "repositoryURL": "https://github.com/vapor/core.git",
-      "version": "2.0.0"
+      "version": "2.0.1"
     },
     {
       "package": "Crypto",
@@ -50,6 +56,18 @@
       "version": "2.0.0"
     },
     {
+      "package": "Fluent",
+      "reason": null,
+      "repositoryURL": "https://github.com/vapor/fluent.git",
+      "version": "2.0.0"
+    },
+    {
+      "package": "FluentProvider",
+      "reason": null,
+      "repositoryURL": "https://github.com/vapor/fluent-provider.git",
+      "version": "1.0.0"
+    },
+    {
       "package": "JSON",
       "reason": null,
       "repositoryURL": "https://github.com/vapor/json.git",
@@ -68,6 +86,12 @@
       "version": "1.0.0"
     },
     {
+      "package": "MarkdownProvider",
+      "reason": null,
+      "repositoryURL": "https://github.com/vapor-community/markdown-provider",
+      "version": "1.0.0"
+    },
+    {
       "package": "Multipart",
       "reason": null,
       "repositoryURL": "https://github.com/vapor/multipart.git",
@@ -77,6 +101,24 @@
       "package": "Node",
       "reason": null,
       "repositoryURL": "https://github.com/vapor/node.git",
+      "version": "2.0.0"
+    },
+    {
+      "package": "PostgreSQL",
+      "reason": null,
+      "repositoryURL": "https://github.com/vapor-community/postgresql.git",
+      "version": "2.0.0"
+    },
+    {
+      "package": "PostgreSQLDriver",
+      "reason": null,
+      "repositoryURL": "https://github.com/vapor/postgresql-driver.git",
+      "version": "2.0.0"
+    },
+    {
+      "package": "PostgreSQLProvider",
+      "reason": null,
+      "repositoryURL": "https://github.com/vapor/postgresql-provider.git",
       "version": "2.0.0"
     },
     {
@@ -92,10 +134,22 @@
       "version": "2.0.0"
     },
     {
+      "package": "SQLite",
+      "reason": null,
+      "repositoryURL": "https://github.com/vapor/sqlite.git",
+      "version": "2.0.0"
+    },
+    {
       "package": "Sockets",
       "reason": null,
       "repositoryURL": "https://github.com/vapor/sockets.git",
       "version": "2.0.0"
+    },
+    {
+      "package": "SwiftMarkdown",
+      "reason": null,
+      "repositoryURL": "https://github.com/vapor-community/markdown.git",
+      "version": "0.3.0"
     },
     {
       "package": "TLS",
@@ -108,6 +162,12 @@
       "reason": null,
       "repositoryURL": "https://github.com/vapor/vapor.git",
       "version": "2.0.1"
+    },
+    {
+      "package": "cmark",
+      "reason": null,
+      "repositoryURL": "https://github.com/brokenhandsio/cmark-gfm.git",
+      "version": "1.0.0"
     }
   ],
   "version": 1
