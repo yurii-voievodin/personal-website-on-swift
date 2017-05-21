@@ -23,4 +23,11 @@ extension Date {
         formatter.dateFormat = "dd MMMM yyyy"
         return formatter.string(from: self)
     }
+    
+    /// Components od day, month, year as Int from date
+    var calendarComponents: (day: Int, month: Int, year: Int)? {
+        let components = Calendar.current.dateComponents([.day, .month, .year], from: self)
+        guard let day = components.day, let month = components.month, let year = components.year else { return nil }
+        return (day, month, year)
+    }
 }

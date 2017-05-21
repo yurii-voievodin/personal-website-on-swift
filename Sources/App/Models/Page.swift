@@ -1,3 +1,11 @@
+//
+//  Session.swift
+//  PersonalWebSiteOnSwift
+//
+//  Created by Yura Voevodin on 21.05.17.
+//
+//
+
 import Vapor
 import FluentProvider
 import HTTP

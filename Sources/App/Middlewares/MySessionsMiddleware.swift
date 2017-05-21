@@ -1,27 +1,18 @@
-import Vapor
+//
+//  MySessionsMiddleware.swift
+//  PersonalWebSiteOnSwift
+//
+//  Created by Yura Voevodin on 21.05.17.
+//
+//
 
-final class Routes: RouteCollection {
-    let view: ViewRenderer
-    init(_ view: ViewRenderer) {
-        self.view = view
-    }
+import HTTP
+
+final class MySessionsMiddleware: Middleware {
     
-    func build(_ builder: RouteBuilder) throws {
-        // Pages
-        builder.resource("/", PageController(view))
+    func respond(to request: Request, chainingTo next: Responder) throws -> Response {
+        let response = try next.respond(to: request)
         
-        // Blog
-        builder.resource("posts", PostController(view))
-        
-        // response to requests to /info domain
-        // with a description of the request
-        builder.get("info") { req in
-            return req.description
-        }
-    }
-    
-    // TODO: Refactor to middleware
-    fileprivate func addRequest() {
         if let (day, month, year) = Date().calendarComponents {
             do {
                 if let session = try Session.makeQuery()
@@ -39,5 +30,7 @@ final class Routes: RouteCollection {
                 print(error.localizedDescription)
             }
         }
+        
+        return response
     }
 }

@@ -8,9 +8,10 @@ extension Config {
         // allow fuzzy conversions for these types
         // (add your own types here)
         Node.fuzzy = [Row.self, JSON.self, Node.self]
-
+        
         try setupProviders()
         try setupPreparations()
+        try setupMiddlewares()
     }
     
     /// Configure providers
@@ -26,7 +27,12 @@ extension Config {
     private func setupPreparations() throws {
         preparations += [
             Page.self,
-            Post.self
-        ] as [Preparation.Type]
+            Post.self,
+            Session.self
+            ] as [Preparation.Type]
+    }
+    
+    private func setupMiddlewares() throws {
+        addConfigurable(middleware: MySessionsMiddleware(), name: "my-sessions")
     }
 }
