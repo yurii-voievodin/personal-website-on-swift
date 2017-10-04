@@ -31,7 +31,7 @@
         </div>
         #markdown(content)
     </div>
-    <div class="six columns"><img class="u-max-full-width" src="/images/new_messenger_bot_screenshot.png.png" alt="SumDU Bot"></div>
+    <div class="six columns"><img class="u-max-full-width" src="/images/new_messenger_bot_screenshot.png" alt="SumDU Bot"></div>
 </div>
 }
 
