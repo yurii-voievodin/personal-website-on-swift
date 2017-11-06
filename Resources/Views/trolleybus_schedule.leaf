@@ -1,0 +1,48 @@
+#extend("base")
+
+#export("menu") {
+<div class="row">
+	<div class="u-full-width">
+		<div class="menu">
+			<div class="row"><h1>Розклад тролейбусів міста Суми</h1></div>
+			<hr/>
+		</div>
+	</div>
+</div>
+}
+#export("body") {
+<div class="row"><p><b>Увага! Сторінка знаходиться в розробці 👨‍💻</b></p></div>
+<div class="row">
+	<form action="/trolleybus_schedule" method="POST">
+		<select name="route">
+			<option value="" #equal(route, "0") { selected } disabled hidden>Виберіть зупинку</option>
+			<option value="15" #equal(route, "15") { selected }>Прокофьєва вулиця, кінцева</option>
+			<option value="1" #equal(route, "1") { selected }>Покровська площа, МакДональдз</option>
+		</select>
+		<button class="button button-primary">Дивитися</button>
+	</form>
+</div>
+
+<div class="row">
+	<table class="u-full-width">
+		<thead>
+			<th>(понеділок-п'ятниця)</th>
+			<th>(субота-неділя)</th>
+		</tr>
+	</thead>
+	<tbody>
+		#loop(records, "record") {
+		<tr>
+			<td>#(record.weekday)</td>
+			<td>#(record.holiday)</td>
+		</tr>
+	}
+</tbody>
+</table>
+</div>
+<div class="row">Якщо ви зацікавлені у тому, щоб тут з’явилися й інші зупинки міста Суми, <b>просто напишіть мені!</b></div>
+}
+
+#export("main_link") {
+<a href="/ua">Юра Воєводін</a>
+}

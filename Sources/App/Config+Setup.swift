@@ -28,7 +28,8 @@ extension Config {
         preparations += [
             Page.self,
             Post.self,
-            Session.self
+            Session.self,
+            Record.self
             ] as [Preparation.Type]
     }
     
