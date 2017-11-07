@@ -14,8 +14,8 @@ final class Record: Model {
     
     // MARK: Properties
     
+    let routeID: Identifier?
     var holiday: String
-    var route: Int
     var weekday: String
     
     // MARK: Fluent Serialization
@@ -24,16 +24,21 @@ final class Record: Model {
     /// database row
     init(row: Row) throws {
         holiday = try row.get("holiday")
-        route = try row.get("route")
         weekday = try row.get("weekday")
+        
+        // Relationships
+        routeID = try row.get("route_id")
     }
     
     /// Serializes the Session to the database
     func makeRow() throws -> Row {
         var row = Row()
         try row.set("holiday", holiday)
-        try row.set("route", route)
         try row.set("weekday", weekday)
+        
+        // Relationships
+        try row.set("route_id", routeID)
+        
         return row
     }
 }
@@ -45,9 +50,16 @@ extension Record: NodeRepresentable {
     func makeNode(in context: Context?) throws -> Node {
         var node = Node(context)
         try node.set("holiday", holiday)
-        try node.set("route", route)
         try node.set("weekday", weekday)
         return node
+    }
+}
+
+// MARK: - Relationships
+
+extension Record {
+    var route: Parent<Record, Route> {
+        return parent(id: routeID)
     }
 }
 
@@ -58,8 +70,8 @@ extension Record: Preparation {
     static func prepare(_ database: Database) throws {
         try database.create(self, closure: { builder in
             builder.id()
+            builder.parent(Route.self)
             builder.string("holiday")
-            builder.int("route")
             builder.string("weekday")
         })
     }

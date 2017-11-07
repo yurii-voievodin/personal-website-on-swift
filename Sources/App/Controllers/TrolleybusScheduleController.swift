@@ -23,22 +23,23 @@ final class TrolleybusScheduleController {
     // MARK: Methods
     
     func index(_ req: Request) throws -> ResponseRepresentable {
-        let route = req.query?["route"]?.int ?? 0
-        let records = try Record.makeQuery().filter("route", route).all()
+        let stationID = req.query?["station"]?.int ?? 0
+        let stations = try Station.all()
+        let station = try Station.makeQuery().find(stationID)
         return try view.make(
             "trolleybus_schedule",
             [
                 "title": "Розклад тролейбусів міста Суми",
                 "description": "Розклад тролейбусів Суми, Тролейбуси міста Суми розклад",
                 "keywords": "Суми, Тролейбуси, Розклад",
-                "records": try records.makeNode(in: nil),
-                "route": route
+                "currentStation": try station.makeNode(in: nil),
+                "stations": try stations.makeNode(in: nil)
             ]
         )
     }
     
     func search(_ req: Request) throws -> ResponseRepresentable {
-        guard let route = req.data["route"]?.string else { throw Abort.badRequest }
-        return Response(redirect: "/trolleybus_schedule?route=\(route)")
+        guard let station = req.data["station"]?.string else { throw Abort.badRequest }
+        return Response(redirect: "/trolleybus_schedule?station=\(station)")
     }
 }
