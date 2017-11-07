@@ -1,22 +1,27 @@
+// swift-tools-version:4.0
 import PackageDescription
 
 let package = Package(
     name: "PersonalWebSiteOnSwift",
-    targets: [
-        Target(name: "App"),
-        Target(name: "Run", dependencies: ["App"]),
-        ],
-    dependencies: [
-        .Package(url: "https://github.com/vapor/vapor.git", majorVersion: 2),
-        .Package(url: "https://github.com/vapor/fluent-provider.git", majorVersion: 1),
-        .Package(url: "https://github.com/vapor/leaf-provider.git", majorVersion: 1),
-        .Package(url: "https://github.com/vapor/postgresql-provider.git", majorVersion: 2, minor: 0),
-        .Package(url: "https://github.com/vapor-community/markdown-provider", majorVersion: 1)
+    products: [
+        .library(name: "App", targets: ["App"]),
+        .executable(name: "Run", targets: ["Run"])
     ],
-    exclude: [
-        "Config",
-        "Database",
-        "Public",
-        "Resources",
-        ]
+    dependencies: [
+        .package(url: "https://github.com/vapor/vapor.git", .upToNextMajor(from: "2.1.0")),
+        .package(url: "https://github.com/vapor/fluent-provider.git", .upToNextMajor(from: "1.0.0")),
+        .package(url: "https://github.com/vapor/leaf-provider.git", .upToNextMajor(from: "1.0.0")),
+        .package(url: "https://github.com/vapor/postgresql-provider.git", .upToNextMajor(from: "2.0.0")),
+        .package(url: "https://github.com/vapor-community/markdown-provider", .upToNextMajor(from: "1.0.0"))
+    ],
+    targets: [
+        .target(name: "App", dependencies: ["Vapor", "FluentProvider", "LeafProvider", "PostgreSQLProvider", "MarkdownProvider"],
+                exclude: [
+                    "Config",
+                    "Database",
+                    "Public",
+                    "Resources",
+                    ]),
+        .target(name: "Run", dependencies: ["App"])
+    ]
 )
