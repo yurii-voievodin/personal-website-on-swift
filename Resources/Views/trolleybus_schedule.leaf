@@ -26,7 +26,7 @@
 
 #loop(currentStation.routes, "route") {
 <div class="row">
-	<h2>#(route.name)</h2>
+	<h2>🚎 #(route.name)</h2>
 	<table class="u-full-width">
 		<thead>
 			<tr>
