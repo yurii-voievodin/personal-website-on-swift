@@ -3,7 +3,7 @@
 #export("body") {
 <div class="row">
     <div class="two columns">
-        <img class="u-max-full-width" style="border-radius: 6px;" src="/images/avatar.jpg" alt="Yura Voevodin"/>
+        <img class="u-max-full-width" style="border-radius: 6px;" src="/images/avatar.png" alt="Yura Voevodin"/>
     </div>
     <div class="ten columns">#markdown(intro)</div>
 </div>
