@@ -19,7 +19,7 @@
                 <hr>
                 <div class="row">
                     <div class="u-pull-left">
-                        <p>© 2017 #import("main_link"). Made with ❤️ on <a href="https://vapor.codes">Vapor</a> and <a href="http://getskeleton.com">Skeleton</a></p>
+                        <p>© 2018 #import("main_link"). Made on <a href="https://vapor.codes">Vapor</a> and <a href="http://getskeleton.com">Skeleton</a></p>
                     </div>
                     #import("lang")
                 </div>
