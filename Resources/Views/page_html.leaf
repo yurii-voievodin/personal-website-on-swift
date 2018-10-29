@@ -1,0 +1,14 @@
+#extend("base")
+
+#export("body") {
+<div class="row">#markdown(intro)</div>
+<div class="row">#raw(content)</div>
+}
+
+#export("updated_at") {
+<p class="gray-text">Updated at: #(updated_at)</p>
+}
+
+#export("main_link") {
+<a href="/">Yura Voevodin</a>
+}
