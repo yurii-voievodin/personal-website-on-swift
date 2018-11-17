@@ -320,7 +320,9 @@ body {
     line-height: 1.6;
     font-weight: 400;
     font-family: "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
-    color: #222; }
+    color: #ddd;
+    background-color: #222;
+}
 
 h1, h2, h3, h4, h5, h6 {
     margin-top: 0;
